@@ -1,9 +1,22 @@
+<?php
+
+
+session_start();
+
+
+if (!empty($_SESSION['user_name']) && ($_SESSION['user_logged_in'] == 1)) {
+
+ 
+
+
+ } else{
+     
+     header("Location: login/index.php");
+     
+ }
+?>
+
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <meta charset="UTF-8">
@@ -22,3 +35,5 @@ and open the template in the editor.
 hello
     </body>
 </html>
+
+
