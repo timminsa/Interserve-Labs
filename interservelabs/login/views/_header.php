@@ -1,32 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-gb" dir="ltr" class="uk-height-1-1 uk-notouch">
     <head>
         <meta charset="UTF-8">
         <title>Interserve Labs</title>
-        <link rel="stylesheet"  type="text/css" href="http://interservelabs.com/css/mainui.css" />
-        <!-- jQuery -->
+
+         <link rel="stylesheet" href="//interservelabs.com/css/uikit.gradient.min.css" />
+        <script src="//js/uikit.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
-        <!-- jQuery UI--> 
-        <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
-        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 
-        <script src="../script/ui.js"></script>
-
-
-    <body>
+<body class="uk-height-1-1">
 
         <?php
 // show potential errors / feedback (from login object)
         if (isset($login)) {
             if ($login->errors) {
                 foreach ($login->errors as $error) {
-                    echo $error;
+                  echo '<div class="uk-alert uk-alert-danger">'.  $error.'</div>';
                 }
             }
             if ($login->messages) {
                 foreach ($login->messages as $message) {
-                    echo $message;
+                                        echo '<div class="uk-alert uk-alert-success">'.  $message.'</div>';
                 }
             }
         }
@@ -37,12 +32,12 @@
         if (isset($registration)) {
             if ($registration->errors) {
                 foreach ($registration->errors as $error) {
-                    echo $error;
+                         echo '<div class="uk-alert uk-alert-danger">'.  $error.'</div>';
                 }
             }
             if ($registration->messages) {
                 foreach ($registration->messages as $message) {
-                    echo $message;
+                    echo '<div class="uk-alert uk-alert-success">'.  $message.'</div>';
                 }
             }
         }
