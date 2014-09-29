@@ -19,6 +19,7 @@ if (!empty($_SESSION['user_name']) && ($_SESSION['user_logged_in'] == 1)) {
         <link rel="stylesheet" href="//interservelabs.com/css/uikit.gradient.min.css" />
         <script src="//interservelabs.com/js/jquery-1.11.1.min.js"></script>
         <script src="//interservelabs.com/js/uikit.min.js"></script>
+        <script src="js/maximopost.js"></script>
     </head>
 
     <body class="uk-height-1-1">
@@ -45,39 +46,9 @@ if (!empty($_SESSION['user_name']) && ($_SESSION['user_logged_in'] == 1)) {
 
             <div class="uk-grid" data-uk-grid-margin="">
                 <div class="uk-width-medium-1-1">
-                    <div class="uk-margin">
+                    <button>Get Maximo</button>
 
-                        <div class="uk-button-dropdown" data-uk-dropdown="">
-                            <button class="uk-button">Hover me <i class="uk-icon-caret-down"></i></button>
-                            <div class="uk-dropdown">
-                                <ul class="uk-nav uk-nav-dropdown">
-                                    <li><a href="#">Item</a></li>
-                                    <li><a href="#">Another item</a></li>
-                                    <li class="uk-nav-header">Header</li>
-                                    <li><a href="#">Item</a></li>
-                                    <li><a href="#">Another item</a></li>
-                                    <li class="uk-nav-divider"></li>
-                                    <li><a href="#">Separated item</a></li>
-                                </ul>
-                            </div>
-                        </div>
 
-                        <div class="uk-button-dropdown" data-uk-dropdown="{mode:'click'}">
-                            <button class="uk-button">Click me <i class="uk-icon-caret-down"></i></button>
-                            <div class="uk-dropdown">
-                                <ul class="uk-nav uk-nav-dropdown">
-                                    <li><a href="#">Item</a></li>
-                                    <li><a href="#">Another item</a></li>
-                                    <li class="uk-nav-header">Header</li>
-                                    <li><a href="#">Item</a></li>
-                                    <li><a href="#">Another item</a></li>
-                                    <li class="uk-nav-divider"></li>
-                                    <li><a href="#">Separated item</a></li>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </div>
                     <div class="uk-button-dropdown" data-uk-dropdown="{mode:'click'}">
                         <button class="uk-button">Click me <i class="uk-icon-caret-down"></i></button>
                         <div class="uk-dropdown">
