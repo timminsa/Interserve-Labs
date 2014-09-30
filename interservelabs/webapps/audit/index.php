@@ -46,24 +46,19 @@ if (!empty($_SESSION['user_name']) && ($_SESSION['user_logged_in'] == 1)) {
 
             <div class="uk-grid" data-uk-grid-margin="">
                 <div class="uk-width-medium-1-1">
-                    <button>Get Maximo</button>
+                           
+                    <button id="getData" class="uk-button uk-button-primary" type="button">Refresh    <i class="uk-icon-refresh"></i></button>
 
-
-                    <div class="uk-button-dropdown" data-uk-dropdown="{mode:'click'}">
-                        <button class="uk-button">Click me <i class="uk-icon-caret-down"></i></button>
+                    <div id="ddObjStruct" class="uk-button-dropdown" data-uk-dropdown="{mode:'click'}">
+                        <button class="uk-button">Object Structures   <i class="uk-icon-caret-down"></i></button>
                         <div class="uk-dropdown">
-                            <ul class="uk-nav uk-nav-dropdown">
-                                <li><a href="#">Item</a></li>
-                                <li><a href="#">Another item</a></li>
-                                <li class="uk-nav-header">Header</li>
-                                <li><a href="#">Item</a></li>
-                                <li><a href="#">Another item</a></li>
-                                <li class="uk-nav-divider"></li>
-                                <li><a href="#">Separated item</a></li>
+                            <ul id="ulObjStruct" class="uk-nav uk-nav-dropdown">
                             </ul>
                         </div>
                     </div>
 
+                    
+                    <button class="uk-button uk-button-primary" type="button">Get Data</button>
                 </div>
             </div>
 
