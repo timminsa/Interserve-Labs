@@ -19,6 +19,8 @@ if (!empty($_SESSION['user_name']) && ($_SESSION['user_logged_in'] == 1)) {
         <link rel="stylesheet" href="//interservelabs.com/css/uikit.gradient.min.css" />
         <script src="//interservelabs.com/js/jquery-1.11.1.min.js"></script>
         <script src="//interservelabs.com/js/uikit.min.js"></script>
+        <link rel="stylesheet" href="//cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css" />
+        <script src="//cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
         <script src="js/maximopost.js"></script>
     </head>
 
@@ -46,8 +48,8 @@ if (!empty($_SESSION['user_name']) && ($_SESSION['user_logged_in'] == 1)) {
 
             <div class="uk-grid" data-uk-grid-margin="">
                 <div class="uk-width-medium-1-1">
-                           
-                    <button id="getData" class="uk-button uk-button-primary" type="button">Refresh    <i class="uk-icon-refresh"></i></button>
+
+                    <button id="getOS" class="uk-button uk-button-primary" type="button">Refresh    <i class="uk-icon-refresh"></i></button>
 
                     <div id="ddObjStruct" class="uk-button-dropdown" data-uk-dropdown="{mode:'click'}">
                         <button class="uk-button">Object Structures   <i class="uk-icon-caret-down"></i></button>
@@ -57,11 +59,31 @@ if (!empty($_SESSION['user_name']) && ($_SESSION['user_logged_in'] == 1)) {
                         </div>
                     </div>
 
-                    
-                    <button class="uk-button uk-button-primary" type="button">Get Data</button>
                 </div>
             </div>
+            <div class="uk-grid" data-uk-grid-margin="10">
+                <div class="uk-width-medium-1-1">
 
+
+
+                    <button id="getData"  class="uk-button uk-button-primary" type="button">Get Data <i></i></button>
+                </div> 
+            </div>   
+            <div  class="uk-grid" data-uk-grid-margin="10">
+                <div  class="uk-width-medium-1-1">
+                    <table id="dataResult">
+                        <thead>
+
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+
+
+
+                </div> 
+            </div>   
 
             <hr class="uk-grid-divider">
 

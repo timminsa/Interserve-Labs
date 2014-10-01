@@ -1,0 +1,13 @@
+<?php
+
+$curl = curl_init();
+curl_setopt_array($curl, array(
+    CURLOPT_RETURNTRANSFER => 1,
+    CURLOPT_URL => 'https://mobsitmaximo.bbc-irv.co.uk/maxrest/rest/os/MXAUDITOBJ?_lid=timminsa&_lpwd=maximo&usewith=~eq~AUDIT'
+));
+
+$resp = curl_exec($curl);
+print_r($resp);
+
+curl_close($curl);
+?>
