@@ -149,18 +149,11 @@ class Registration
 
                 if ($query_new_user_insert) {
                     // send a verification email
-                    if ($this->sendVerificationEmail($user_id, $user_email, $user_activation_hash)) {
+            
                         // when mail has been send successfully
                         $this->messages[] = MESSAGE_VERIFICATION_MAIL_SENT;
                         $this->registration_successful = true;
-                    } else {
-                        // delete this users account immediately, as we could not send a verification email
-                        $query_delete_user = $this->db_connection->prepare('DELETE FROM users WHERE user_id=:user_id');
-                        $query_delete_user->bindValue(':user_id', $user_id, PDO::PARAM_INT);
-                        $query_delete_user->execute();
-
-                        $this->errors[] = MESSAGE_VERIFICATION_MAIL_ERROR;
-                    }
+                  
                 } else {
                     $this->errors[] = MESSAGE_REGISTRATION_FAILED;
                 }

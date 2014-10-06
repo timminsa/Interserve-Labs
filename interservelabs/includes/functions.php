@@ -1,9 +1,9 @@
 <?php
 
 define("DB_HOST", "127.0.0.1");
-define("DB_NAME", "interser_live");
-define("DB_USER", "interser_live");
-define("DB_PASS", "S4msung1!");
+define("DB_NAME", "intlabs");
+define("DB_USER", "intlabs");
+define("DB_PASS", "C4llac!");
 
 function PostLoop($table) {
 

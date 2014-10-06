@@ -27,7 +27,7 @@ if (!empty($_SESSION['user_name']) && ($_SESSION['user_logged_in'] == 1)) {
         <div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
 
             <nav class="uk-navbar uk-margin-large-bottom">
-                <a class="uk-navbar-brand uk-hidden-small" href="index.php"><img  width="36" height="36" src="http://interservelabs.com/image/interserve-hydra.svg" alt="home"></a>
+                <a class="uk-navbar-brand uk-hidden-small" href="index.php"><img  width="36" height="36" src="./image/interserve-hydra.svg" alt="home"></a>
                 <ul class="uk-navbar-nav uk-hidden-small">
                     <li>
                         <a href="projects.php">Projects</a>

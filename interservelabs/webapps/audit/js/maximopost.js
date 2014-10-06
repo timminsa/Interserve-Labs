@@ -1,11 +1,12 @@
 $(document).ready(function () {
 
     var arrObjectStruct = [];
+    var arrObjectAtt = [];
 
 
     $("#getOS").click(function () {
         $('#getOS i').addClass("uk-icon-spin");
-        $.get("http://interservelabs.com/webapps/audit/getOS.php").success(function (data) {
+        $.get("./getOS.php").success(function (data) {
 
             $('#selObjStruct').html("");
             $('#selObjStruct').append('<option>Select One...</option>');
@@ -26,7 +27,7 @@ $(document).ready(function () {
 
     $("#getData").click(function () {
         $('#getData i').addClass("uk-icon-spin");
-        $.get("http://interservelabs.com/webapps/audit/getData.php?OS=" + $("#selObjStruct option:selected").text()).success(function (data) {
+        $.get("./getData.php?OS=" + $("#selObjStruct option:selected").text()).success(function (data) {
 
             $('#dataResult thead').html("");
             $('#dataResult tbody').html("");
@@ -62,6 +63,30 @@ $(document).ready(function () {
         if (sMainObj) {
             $('#txtMainObj').val(sMainObj['MAINOBJECT']);
             $('#txtObjDescription').val(sMainObj['DESCRIPTION']);
+            
+            
+            
+            
+            
+            //Get Attributes 
+            $.get("./getAttr.php?maxobject="+$("#selObjStruct option:selected").text()).success(function (data) {
+
+                $('#selObjStruct').html("");
+                $('#selObjStruct').append('<option>Select One...</option>');
+                $(data).find('MAXINTOBJECT').each(function () {
+                    var objObjectStruct = ['DESCRIPTION', 'MAINOBJECT'];
+                    objObjectStruct['DESCRIPTION'] = $(this).find('DESCRIPTION').text();
+                    objObjectStruct['MAINOBJECT'] = $(this).find('OBJECTNAME').text();
+                    var arrDesc = $(this).find('INTOBJECTNAME').text();
+                    arrObjectStruct[arrDesc] = objObjectStruct;
+                    $('#selObjStruct').append('<option>' + $(this).find('INTOBJECTNAME').text() + '</option>');
+                });
+
+
+            });
+
+
+
         } else {
 
             $('#txtMainObj').val("");
@@ -77,7 +102,7 @@ $(document).ready(function () {
     });
 
 
-    $(document).on("click",".removefilter", function () {
+    $(document).on("click", ".removefilter", function () {
 
         $(this).parent().parent().remove();
 

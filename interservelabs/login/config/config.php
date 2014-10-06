@@ -13,7 +13,7 @@
  *          by the way, it's bad style to use "root", but for development it will work.
  * DB_PASS: the password of the above user
  */
-define("DB_HOST", "127.0.0.1");
+define("DB_HOST", "IFS-WB-SQL-T99");
 define("DB_NAME", "intlabs");
 define("DB_USER", "intlabs");
 define("DB_PASS", "C4llac!");
@@ -62,10 +62,10 @@ define("COOKIE_SECRET_KEY", "1gp@Tz543MPS{+dssFe-92s");
  *
  */
 define("EMAIL_USE_SMTP", false);
-define("EMAIL_SMTP_HOST", "mail.interservelabs.com");
+define("EMAIL_SMTP_HOST", "mail.timminswebdesign.com");
 define("EMAIL_SMTP_AUTH", true);
-define("EMAIL_SMTP_USERNAME", "no-reply@interservelabs.com");
-define("EMAIL_SMTP_PASSWORD", "S4msung1!");
+define("EMAIL_SMTP_USERNAME", "no-replay@timminswebdesign.com");
+define("EMAIL_SMTP_PASSWORD", "S4msung1!2");
 define("EMAIL_SMTP_PORT", 465);
 define("EMAIL_SMTP_ENCRYPTION", "ssl");
 

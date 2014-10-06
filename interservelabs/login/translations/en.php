@@ -38,7 +38,7 @@ define("MESSAGE_REGISTRATION_FAILED", "Sorry, your registration failed. Please g
 define("MESSAGE_RESET_LINK_HAS_EXPIRED", "Your reset link has expired. Please use the reset link within one hour.");
 define("MESSAGE_VERIFICATION_MAIL_ERROR", "Sorry, we could not send you an verification mail. Your account has NOT been created.");
 define("MESSAGE_VERIFICATION_MAIL_NOT_SENT", "Verification Mail NOT successfully sent! Error: ");
-define("MESSAGE_VERIFICATION_MAIL_SENT", "Your account has been created successfully and we have sent you an email. Please click the VERIFICATION LINK within that mail.");
+define("MESSAGE_VERIFICATION_MAIL_SENT", "Your account has been created successfully. An administrator will approve your account shortly");
 define("MESSAGE_USER_DOES_NOT_EXIST", "This user does not exist");
 define("MESSAGE_USERNAME_BAD_LENGTH", "Username cannot be shorter than 2 or longer than 64 characters");
 define("MESSAGE_USERNAME_CHANGE_FAILED", "Sorry, your chosen username renaming failed");
