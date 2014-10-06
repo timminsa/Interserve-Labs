@@ -16,9 +16,9 @@ if (!empty($_SESSION['user_name']) && ($_SESSION['user_logged_in'] == 1)) {
         <meta charset="UTF-8">
         <title>Interserve Labs</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="//interservelabs.com/css/uikit.gradient.min.css" />
+        <link rel="stylesheet" href="/css/uikit.gradient.min.css" />
         <script src="js/uikit.min.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
 
 
     <body class="uk-height-1-1">

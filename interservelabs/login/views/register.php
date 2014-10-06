@@ -6,7 +6,7 @@
     ::before
     <div class="uk-vertical-align-middle" style="width: 250px;">
 
-        <img class="uk-margin-bottom" width="220" height="120" src="http://interservelabs.com/image/interserve-logo.svg" alt="">
+        <img class="uk-margin-bottom" width="220" height="120" src="../image/interserve-logo.svg" alt="">
 
         <form class="uk-panel uk-panel-box uk-form" method="post" action="register.php" name="registerform">
             <div class="uk-form-row">

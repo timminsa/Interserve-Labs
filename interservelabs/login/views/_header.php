@@ -4,9 +4,9 @@
         <meta charset="UTF-8">
         <title>Interserve Labs</title>
 
-         <link rel="stylesheet" href="//interservelabs.com/css/uikit.gradient.min.css" />
-        <script src="//js/uikit.min.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+         <link rel="stylesheet" href="../css/uikit.gradient.min.css" />
+        <script src="../js/uikit.min.js"></script>
+
 
 
 <body class="uk-height-1-1">

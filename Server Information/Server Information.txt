@@ -1,0 +1,14 @@
+IP Address: 10.6.8.57
+
+Host Name: IFS-WB-SQL-T99
+
+Roles: IIS
+
+PHP Version: php-5.6.1-nts-Win32-VC11-x86
+
+MySQL:
+
+Version: 5.6.21
+
+ROOT:C4llac!
+intlabs:C4llac!

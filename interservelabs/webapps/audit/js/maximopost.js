@@ -1,39 +1,43 @@
 $(document).ready(function () {
 
+    var arrObjectStruct = [];
+
 
     $("#getOS").click(function () {
-        $('#ddObjStruct button i').removeClass("uk-icon-caret-down").addClass("uk-icon-spin uk-icon-refresh");
+        $('#getOS i').addClass("uk-icon-spin");
         $.get("http://interservelabs.com/webapps/audit/getOS.php").success(function (data) {
 
-            $('#ulObjStruct').html("");
-
-            $(data).find('INTOBJECTNAME').each(function () {
-
-                $('#ulObjStruct').append('<li><a href="#" onclick="setObjStruct();">' + $(this).text() + '</a></li>');
-
+            $('#selObjStruct').html("");
+            $('#selObjStruct').append('<option>Select One...</option>');
+            $(data).find('MAXINTOBJECT').each(function () {
+                var objObjectStruct = ['DESCRIPTION', 'MAINOBJECT'];
+                objObjectStruct['DESCRIPTION'] = $(this).find('DESCRIPTION').text();
+                objObjectStruct['MAINOBJECT'] = $(this).find('OBJECTNAME').text();
+                var arrDesc = $(this).find('INTOBJECTNAME').text();
+                arrObjectStruct[arrDesc] = objObjectStruct;
+                $('#selObjStruct').append('<option>' + $(this).find('INTOBJECTNAME').text() + '</option>');
             });
 
-            $('#ddObjStruct button i').removeClass("uk-icon-spin uk-icon-refresh").addClass("uk-icon-caret-down");
+            $('#getOS i').removeClass("uk-icon-spin");
             // will contain all data (and display it in console)
         });
 
     });
 
-
     $("#getData").click(function () {
-        $('#getData i').addClass("uk-icon-spin uk-icon-refresh");
-        $.get("http://interservelabs.com/webapps/audit/getData.php").success(function (data) {
+        $('#getData i').addClass("uk-icon-spin");
+        $.get("http://interservelabs.com/webapps/audit/getData.php?OS=" + $("#selObjStruct option:selected").text()).success(function (data) {
 
             $('#dataResult thead').html("");
             $('#dataResult tbody').html("");
 
-            $(data).find('A_CHARTOFACCOUNTS').first().children().each(function () {
+            $(data).find($('#txtMainObj').val()).first().children().each(function () {
 
                 $('#dataResult thead').append('<th>' + $(this).prop("tagName") + '</th>');
 
             });
             var a = 1;
-            $(data).find('A_CHARTOFACCOUNTS').each(function () {
+            $(data).find($('#txtMainObj').val()).each(function () {
                 $('#dataResult tbody').append("<tr id='dTr" + a + "'>");
                 $(this).children().each(function () {
                     $('#dTr' + a).append('<td>' + $(this).text() + '</td>');
@@ -43,18 +47,43 @@ $(document).ready(function () {
                 a++;
             });
 
-            $('#getData i').removeClass("uk-icon-spin uk-icon-refresh");
+            $('#getData i').removeClass("uk-icon-spin");
             // will contain all data (and display it in console)
 
         });
-            $('#dataResult').DataTable({
-                searching: true,
-                ordering: true
-            });
+
     });
 
-    $("#ulObjStruct").click(function () {
-        alert($(this).text());
+
+    //UI Functions   
+    $("#selObjStruct").change(function () {
+
+        var sMainObj = arrObjectStruct[$("#selObjStruct option:selected").text()];
+        if (sMainObj) {
+            $('#txtMainObj').val(sMainObj['MAINOBJECT']);
+            $('#txtObjDescription').val(sMainObj['DESCRIPTION']);
+        } else {
+
+            $('#txtMainObj').val("");
+            $('#txtObjDescription').val("");
+        }
     });
+
+
+    $("#addFilter").click(function () {
+
+        $("#filterTable tbody tr").first().clone().appendTo("#filterTable tbody");
+
+    });
+
+
+    $(document).on("click",".removefilter", function () {
+
+        $(this).parent().parent().remove();
+
+    });
+
+
+
 
 });
