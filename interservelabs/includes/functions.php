@@ -58,3 +58,31 @@ function Post($table,$id) {
 
     return true;
 }
+
+
+
+
+function getMaxEnv() {
+
+
+
+    try {
+        $dbh = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8', DB_USER, DB_PASS);
+
+        foreach ($dbh->query('SELECT * from environments') as $row) {
+
+            echo '<div class="uk-grid" data-uk-grid-margin="10">';
+            echo '<div class="uk-width-medium-1-1">';
+            echo '<div class="uk-panel uk-panel-box">';
+            echo '<p><strong>' . $row['contract'] . ':</strong> ' . $row['name'] .' - Last Refresh: '.$row['metarefreshdate'] .'  <button id="refreshEnv'.$row['environments_id'].'" class="uk-button uk-button-primary uk-float-right"  type="button">Refresh Metadata  <i class="uk-icon-refresh"></i></button>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
+        }
+        $dbh = null;
+    } catch (PDOException $e) {
+        print "Error!: " . $e->getMessage() . "<br/>";
+        die();
+    }
+    return true;
+}

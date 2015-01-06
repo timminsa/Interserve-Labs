@@ -88,14 +88,19 @@ if (!empty($_SESSION['user_name']) && ($_SESSION['user_logged_in'] == 1)) {
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><select  class="uk-form-width-small"></select></td>
-                                    <td><select  class="uk-form-width-small">
-                                            <option>=</option>
-                                            <option>&lt;=</option>
-                                            <option>&gt;=</option>
-                                            <option>LIKE</option>
+                                    <td><select  class="uk-form-width-small filterSelect"></select></td>
+                                    <td><select  class="uk-form-width-small filterOper">
+                                            <option value="~eq~">=</option>
+                                            <option value="~neq~">!=</option>
+                                            <option value="~lt~">&lt;</option>
+                                            <option value="~lteq~">&lt;=</option>
+                                            <option value="~gt~">&gt;</option>
+                                            <option value="~gteq~">&gt;=</option>
+                                            <option value="">Like</option>
+                                            <option value="~sw~">Starts With</option>
+                                            <option value="~ew~">Ends With</option>
                                         </select></td>
-                                    <td><input  type="text"  class="uk-form-width-small" ></td>
+                                    <td><input  type="text"  class="uk-form-width-small filterVal" ></td>
                                     <td><button  class="uk-button uk-button-danger uk-float-right removefilter" type="button">Remove <i class="uk-icon-minus"></i></button></td>
                                 </tr>   
                             </tbody>
